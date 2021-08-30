@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Média</title>
+	<style>
+		p {
+			margin: 0px;
+		}
+
+		input#cal {
+			margin-top: 20px;
+			margin-left: 58px;
+		}
+
+		section#res {
+			border: 1px solid black;
+			width: 150px;
+			margin: 10px 0px;
+			text-align: center;
+		}
+
+		#pass {
+			width: 150px;
+			margin: 10px 0px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Calculador de Média</h1>
+	<p>1° Nota: <input type="Number" id="n1"><br></p>
+    <p>2° Nota: <input type="Number" id="n2"><br></p>
+    <p>3° Nota: <input type="Number" id="n3"><br></p>
+    <p>4° Nota: <input type="Number" id="n4"><br></p>
+    <input type="button" value="calcular" id="cal">
+    <section id="res">Resultado</section>
+    <div id="pass"></div>
+
+    <script>
+        var n1 = document.getElementById('n1')
+        var n2 = document.getElementById('n2')
+        var n3 = document.getElementById('n3')
+        var n4 = document.getElementById('n4')
+        var res = document.getElementById('res')
+        var cal = document.getElementById('cal')
+        var pass = document.getElementById('pass')
+
+        cal.addEventListener('click', calcular)
+
+        
+        function calcular(){
+        var valor1 = Number(n1.value)
+        var valor2 = Number(n2.value)
+        var valor3 = Number(n3.value)
+        var valor4 = Number(n4.value)
+        var media = (valor1 + valor2 + valor3 + valor4)/4
+        res.innerHTML = (`Sua média é ${media}`)
+        if(media >= 6){
+            pass.innerHTML = 'Passou'
+        }else{
+            pass.innerHTML = 'Reprovou'
+                    }
+        }
+
+    </script>
+</body>
+</html>
